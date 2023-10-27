@@ -5,7 +5,7 @@ import { FaMicrophone } from 'react-icons/fa';
 import axios from '../utils/axios';
 import { useMessageDispatch } from '../context/message.context';
 
-const Footer = () => {
+const Footer = ({ token }) => {
     const [message, setMessage] = useState('');
     const dispatch = useMessageDispatch();
 
@@ -17,13 +17,12 @@ const Footer = () => {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json; charset=utf-8",
-                    "authorization": "Bearer"
+                    "authorization": `Bearer `
                 },
                 data: JSON.stringify({ message }),
             };
 
-            const res = await axios('addMessage', options);
-            console.log('RESS', res)
+            await axios('addMessage', options);
             setMessage('');
         } catch (err) {
             dispatch({

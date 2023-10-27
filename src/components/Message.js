@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const Message = () => {
+
     return (
         <div className='bg-pink-700 rounded-md max-w-fit relative'>
             <span className='absolute -mt-4 text-xs font-semibold'>

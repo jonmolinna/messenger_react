@@ -6,6 +6,8 @@ import { useMessageState } from '../context/message.context';
 
 const Home = () => {
     const { errors } = useMessageState();
+    const token = localStorage.getItem('toke_mess');
+
     return (
         <div className='min-h-full px-3 border border-pink-900x'>
             {
@@ -24,10 +26,10 @@ const Home = () => {
                         <Header />
                     </div>
                     <div className='flex-1 max-h-fit overflow-y-scroll scrollbar-thin scrollbar-thumb-pink-500'>
-                        <Messages />
+                        <Messages token={token} />
                     </div>
                     <div className=''>
-                        <Footer />
+                        <Footer token={token} />
                     </div>
                 </div>
             </div>
