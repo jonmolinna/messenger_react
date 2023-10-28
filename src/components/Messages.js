@@ -33,12 +33,11 @@ const Messages = ({ token }) => {
 
     return (
         <div className='px-3 py-6 space-y-10'>
-            {/* {
-                messages && messages.map(() => (
-                    <Message />
-                )
-                )
-            } */}
+            {
+                messages && messages.map(message => (
+                    <Message key={message._id} message={message} />
+                ))
+            }
         </div>
     )
 };

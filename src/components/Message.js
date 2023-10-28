@@ -1,17 +1,20 @@
 import React from 'react';
+import { capilizeLetter } from '../utils/capitalize.letter';
+import moment from 'moment';
+import 'moment/locale/es';
 
-const Message = () => {
+const Message = ({ message }) => {
 
     return (
-        <div className='bg-pink-700 rounded-md max-w-fit relative'>
+        <div className='relative'>
             <span className='absolute -mt-4 text-xs font-semibold'>
-                Kendra Contreras
+                {capilizeLetter(message.username.name)}
             </span>
-            <p className='text-white px-2 py-2 text-base'>
-                This is a message Lorem ipsum dolor sit amet.
+            <p className='text-white px-2 py-2 text-base max-w-fit bg-pink-700 rounded-md'>
+                {message.message}
             </p>
             <span className='absolute text-xs font-semibold text-gray-500'>
-                fecha
+                {moment(message.createdAt).format('MMMM DD, YYYY @ h:mm a')}
             </span>
         </div>
     )
