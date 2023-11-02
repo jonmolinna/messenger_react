@@ -17,7 +17,7 @@ const Footer = ({ token }) => {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json; charset=utf-8",
-                    "authorization": `Bearer `
+                    "authorization": `Bearer ${token}`
                 },
                 data: JSON.stringify({ message }),
             };

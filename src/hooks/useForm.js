@@ -39,7 +39,7 @@ export const useForm = (initialForm, endpoint, validateForm) => {
 
         } catch (err) {
             setLoading(true)
-            setErrors(err.response.data.errors);
+            setErrors(err.response?.data.errors);
         } finally {
             setLoading(false)
         }
